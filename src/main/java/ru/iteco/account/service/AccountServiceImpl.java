@@ -1,5 +1,6 @@
 package ru.iteco.account.service;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import ru.iteco.account.model.AccountInfo;
@@ -15,7 +16,7 @@ public class AccountServiceImpl implements AccountService {
     private final PersonalInformationService personalInformationService;
     private final Map<String, BankBookService> bankBookServices;
 
-    public AccountServiceImpl(PersonalInformationService personalInformationService, Map<String, BankBookService> bankBookServices, Map<String, BankBookService> bankBookService) {
+    public AccountServiceImpl(@Lazy PersonalInformationService personalInformationService, Map<String, BankBookService> bankBookServices, Map<String, BankBookService> bankBookService) {
         this.personalInformationService = personalInformationService;
         this.bankBookServices = bankBookServices;
     }
@@ -26,15 +27,19 @@ public class AccountServiceImpl implements AccountService {
         PersonalInfo personalInfo = personalInformationService.getPersonalInfoById(id);
         accountInfo.setPersonalInfo(personalInfo);
         System.out.println(bankBookServices);
-        for (Map.Entry<String,BankBookService> bankBookServiceEntry:bankBookServices.entrySet()){
-            BankBookService bankBookService=bankBookServiceEntry.getValue();
-           List<BankBook> bankBooks= bankBookService.getBankBooksById(id);
+        for (Map.Entry<String, BankBookService> bankBookServiceEntry : bankBookServices.entrySet()) {
+            BankBookService bankBookService = bankBookServiceEntry.getValue();
+            List<BankBook> bankBooks = bankBookService.getBankBooksById(id);
             System.out.println(bankBooks);
-            if(!bankBooks.isEmpty()){
+            if (!bankBooks.isEmpty()) {
                 accountInfo.setBankBooks(bankBooks);
             }
         }
 
         return accountInfo;
+    }
+
+    public String getPersonalInfoClass(){
+        return personalInformationService.getClass().toString();
     }
 }

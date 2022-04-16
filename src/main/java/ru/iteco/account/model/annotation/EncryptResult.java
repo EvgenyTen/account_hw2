@@ -6,9 +6,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
-public @interface InjectRandom {
-    int min() default 0;
-
-    int max() default 10;
+@Target(ElementType.METHOD)
+public @interface EncryptResult {
 }

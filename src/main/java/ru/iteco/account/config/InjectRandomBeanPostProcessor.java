@@ -10,6 +10,10 @@ import java.lang.reflect.Field;
 
 @Component
 public class InjectRandomBeanPostProcessor implements BeanPostProcessor {
+    private static int getRandom(int min, int max) {
+        return min + (int) (Math.random() * ((max - min) + 1));
+    }
+
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("beanName:" + beanName + "; beanClass: " + bean.getClass().getSimpleName());
@@ -23,10 +27,6 @@ public class InjectRandomBeanPostProcessor implements BeanPostProcessor {
             }
         }
         return bean;
-    }
-
-    private static int getRandom(int min, int max) {
-        return min + (int) (Math.random() * ((max - min) + 1));
     }
 
     @Override

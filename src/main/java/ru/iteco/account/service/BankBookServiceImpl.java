@@ -1,6 +1,5 @@
 package ru.iteco.account.service;
 
-import lombok.Value;
 import org.springframework.stereotype.Service;
 import ru.iteco.account.model.BankBook;
 import ru.iteco.account.model.annotation.InjectRandom;
