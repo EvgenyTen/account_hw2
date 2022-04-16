@@ -16,7 +16,7 @@ public class BankBookServiceImpl implements BankBookService {
     @Override
     public List<BankBook> getBankBooksById(Integer id) {
         BankBook bankBook = new BankBook();
-        bankBook.setNumber(1L);
+        bankBook.setNumber(number.longValue());
         bankBook.setUserId(id);
         ArrayList<BankBook> bankBooks = new ArrayList<BankBook>();
         bankBooks.add(bankBook);
