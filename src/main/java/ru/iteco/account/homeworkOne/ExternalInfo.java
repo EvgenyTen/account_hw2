@@ -1,9 +1,22 @@
 package ru.iteco.account.homeworkOne;
 
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class ExternalInfo {
-    Integer id;
-    String info;
+    private Integer id;
+    private String info;
+
+    public ExternalInfo(Integer id, String info) {
+        this.id = id;
+        this.info = info;
+    }
+
+    @Override
+    public String toString() {
+        return "ExternalInfo{" +
+                "id=" + id +
+                ", info='" + info + '\'' +
+                '}';
+    }
 }
