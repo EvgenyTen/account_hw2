@@ -1,13 +1,15 @@
-package ru.iteco.account.homeworkOne;
+package ru.iteco.account.homeworkTwo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
 
 @Slf4j
 @ComponentScan
 @PropertySource("classpath:application.properties")
+@EnableAspectJAutoProxy
 public class Application {
 
     public static void main(String[] args) {

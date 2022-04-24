@@ -1,4 +1,4 @@
-package ru.iteco.account.homeworkOne;
+package ru.iteco.account.homeworkTwo;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

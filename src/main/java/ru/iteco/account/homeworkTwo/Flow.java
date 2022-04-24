@@ -1,7 +1,8 @@
-package ru.iteco.account.homeworkOne;
+package ru.iteco.account.homeworkTwo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import ru.iteco.account.homeworkTwo.service.ExternalService;
 
 @Component
 @Slf4j

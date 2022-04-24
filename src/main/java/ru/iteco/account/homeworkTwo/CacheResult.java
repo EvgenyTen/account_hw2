@@ -1,4 +1,4 @@
-package ru.iteco.account.homeworkOne;
+package ru.iteco.account.homeworkTwo;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

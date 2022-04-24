@@ -1,4 +1,4 @@
-package ru.iteco.account.homeworkOne;
+package ru.iteco.account.homeworkTwo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.intercept.MethodInterceptor;
@@ -40,7 +40,7 @@ public class CacheResultMethodInterceptor implements MethodInterceptor {
                     log.info("Return result from cache : {} ({}),  result :{}", method.getName(), invocation.getArguments(), result);
                     return result;
                 } else {
-                    log.info("Caal original method and record result into cahce");
+                    log.info("Call original method and record result into cache");
                     result = invocation.proceed();
                     methodArgsObjectMap.put(methodArgs, result);
                     return result;
